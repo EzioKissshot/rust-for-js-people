@@ -48,9 +48,12 @@ $ cargo install cargo-edit
 [`rustfmt`](https://github.com/rust-lang/rustfmt) is Rust's version of
 [`prettier`](https://github.com/prettier/prettier). Everyone uses it, and even
 if the default config might take some getting used to, it's what everyone uses.
+[`rustfmt`](https://github.com/rust-lang/rustfmt) 是Rust版本的
+[`prettier`](https://github.com/prettier/prettier). 大家都使用它，甚至一些默认配置都使用它
 
 It's a binary component that hooks into the compiler, so it needs to be
 installed with `rustup`:
+这是一个二进制组件，hook进编译器，所以需要使用`rustup`来安装它
 
 ```sh
 $ rustup component add rustfmt
@@ -58,11 +61,19 @@ $ rustup component add rustfmt
 
 This should take a few seconds on a fast connection. Whenever you update your
 rust version, `rustfmt` will also be updated.
+当你更新rust版本时，`rustfmt`也会更新。
 
 Important commands are:
+重要的命令：
 
 ```sh
 $ cargo fmt                   // runs rustfmt to format your code
+$ cargo fmt -- --check        // do a dry-run, outputting a diff of changes that would be made
+$ cargo fmt -- --edition=2018 // pass this flag if you're doing stuff with async/await
+```
+
+```sh
+$ cargo fmt                   // 运行rustfmt来格式化代码
 $ cargo fmt -- --check        // do a dry-run, outputting a diff of changes that would be made
 $ cargo fmt -- --edition=2018 // pass this flag if you're doing stuff with async/await
 ```
